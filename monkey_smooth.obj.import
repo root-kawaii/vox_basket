@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cw5xt0hqo38ex"
+path="res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh"
+
+[deps]
+
+files=["res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh"]
+
+source_file="res://monkey_smooth.obj"
+dest_files=["res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh", "res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

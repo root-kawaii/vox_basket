@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbr0tgno7elfo"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_j6qq2"]
+[ext_resource type="Texture2D" uid="uid://dtsobttss46ua" path="res://chr_knight.vox.png" id="2_lft3j"]
+[ext_resource type="ArrayMesh" uid="uid://chf5tsjuf7c83" path="res://chr_knight.vox.obj" id="3_0jpgp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dasmy"]
+radius = 0.41579
+height = 0.963321
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn5vq"]
+albedo_texture = ExtResource("2_lft3j")
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_j6qq2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dasmy")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" type="Node3D" parent="Pivot"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_jn5vq")
+mesh = ExtResource("3_0jpgp")
+skeleton = NodePath("../..")

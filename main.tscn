@@ -1,0 +1,243 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbsymve3hmlig"]
+
+[ext_resource type="ArrayMesh" uid="uid://cw5xt0hqo38ex" path="res://monkey_smooth.obj" id="1_3vxd6"]
+[ext_resource type="Texture2D" uid="uid://dh3oj5p4jelc6" path="res://icon.svg" id="1_r60qr"]
+[ext_resource type="Script" path="res://Arena.cs" id="3_32bxo"]
+[ext_resource type="ArrayMesh" uid="uid://cqbtdpl1e8fv0" path="res://floor.obj" id="3_pacsq"]
+[ext_resource type="PackedScene" uid="uid://bbr0tgno7elfo" path="res://player.tscn" id="3_tcceg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdohv"]
+albedo_color = Color(1, 0.14902, 1, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_fomfh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.377591, -1.44398, 1.48091, 5.02313, 1.44879, -1.21917, -5.02313, -1.44879, 1.21917, -3.31817, 1.79573, -0.675964, 0, 0, 0, 0, 0, 0, -0.377591, -1.44398, 1.48091),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3pcn"]
+size = Vector3(0.856795, 8.05415, 6.89506)
+
+[node name="Main" type="Node"]
+
+[node name="MenuBar" type="MenuBar" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.006
+offset_left = 6.0
+offset_top = -9.0
+offset_right = 1.0
+offset_bottom = 0.111973
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="MenuBar"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0616931
+anchor_top = 0.602383
+anchor_right = 0.894461
+anchor_bottom = 0.957805
+offset_left = 0.237996
+offset_top = -7.17501
+offset_right = 56.053
+offset_bottom = -0.109132
+theme_override_font_sizes/font_size = 100
+text = "CIAOOOOO
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuBar"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.989
+offset_left = 71.0
+offset_top = 381.085
+offset_right = -66.0
+offset_bottom = -23.729
+theme_override_font_sizes/normal_font_size = 100
+text = "ciaooooooo"
+
+[node name="ActionMenu" type="VBoxContainer" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = 370.729
+offset_right = -911.0
+offset_bottom = -10.0
+
+[node name="TextureButton" type="TextureButton" parent="MenuBar/ActionMenu"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_r60qr")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="MenuBar/ActionMenu"]
+layout_mode = 2
+texture_normal = ExtResource("1_r60qr")
+stretch_mode = 0
+
+[node name="MonkeySmooth" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.44419, 0.332987, 2.64994)
+mesh = ExtResource("1_3vxd6")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdohv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.79432, 0)
+visible = false
+omni_range = 4096.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.155262, 0.987873, 0, -0.987873, -0.155262, -2.24335, 2.83363, 3.67377)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0896071, -0.995977, 0, 0.995977, -0.0896071, 0.859838, -4.63887, -0.64762)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_tcceg")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.25905, 0)
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.536622, 0.843823, 0, -0.843823, 0.536622, -13.327, 16.3758, 16.4174)
+fov = 100.0
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90789, -0.0226316, 0)
+curve = SubResource("Curve3D_fomfh")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.591444, 0.535533, 0.602825, -5.96046e-08, 0.747601, -0.664148, -0.806346, 0.392806, 0.442164, -0.377591, -1.44398, 1.48091)
+
+[node name="Arena" type="Node3D" parent="."]
+script = ExtResource("3_32bxo")
+
+[node name="Tile0x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5789, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile0x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile0x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile1x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0526, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile1x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile1x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile2x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52628, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile2x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile2x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile3x" type="StaticBody3D" parent="Arena"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile3x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile3x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile4x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3916, 0, 8.33384)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile4x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile4x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile5x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0526, 0, 8.30073)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile5x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.606346, -0.249389, 0.0235071)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile5x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile6x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.83473, 0, 8.35409)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile6x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile6x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile7x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.45764)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile7x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile7x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile8x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.598, 0, 16.9369)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile8x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile8x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile9x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4635, 0, 16.8812)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile9x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile9x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile10x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.78091, 0, 16.9153)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile10x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile10x"]
+mesh = ExtResource("3_pacsq")
+
+[node name="Tile11x" type="StaticBody3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.9153)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Tile11x"]
+transform = Transform3D(0.00214688, -0.999998, 0, 0.999998, 0.00214688, 0, 0, 0, 1, 0.322836, -0.249389, 0.0235068)
+shape = SubResource("BoxShape3D_t3pcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile11x"]
+mesh = ExtResource("3_pacsq")
+
+[connection signal="pressed" from="MenuBar/ActionMenu/TextureButton" to="CharacterBody3D" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MenuBar/ActionMenu/TextureButton2" to="CharacterBody3D" method="_on_texture_button_2_pressed"]
