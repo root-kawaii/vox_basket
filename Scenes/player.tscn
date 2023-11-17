@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbr0tgno7elfo"]
 
-[ext_resource type="Script" path="res://Player.cs" id="1_j6qq2"]
-[ext_resource type="Texture2D" uid="uid://dtsobttss46ua" path="res://chr_knight.vox.png" id="2_lft3j"]
-[ext_resource type="ArrayMesh" uid="uid://chf5tsjuf7c83" path="res://chr_knight.vox.obj" id="3_0jpgp"]
+[ext_resource type="Script" path="res://src/Player.cs" id="1_qchol"]
+[ext_resource type="Texture2D" uid="uid://dtsobttss46ua" path="res://Assets/chr_knight.vox.png" id="2_lft3j"]
+[ext_resource type="ArrayMesh" uid="uid://chf5tsjuf7c83" path="res://Assets/chr_knight.vox.obj" id="3_0jpgp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dasmy"]
 radius = 0.41579
@@ -12,7 +12,7 @@ height = 0.963321
 albedo_texture = ExtResource("2_lft3j")
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_j6qq2")
+script = ExtResource("1_qchol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_dasmy")

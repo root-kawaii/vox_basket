@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbsymve3hmlig"]
+[gd_scene load_steps=8 format=3 uid="uid://bbsymve3hmlig"]
 
-[ext_resource type="ArrayMesh" uid="uid://cw5xt0hqo38ex" path="res://monkey_smooth.obj" id="1_3vxd6"]
-[ext_resource type="Texture2D" uid="uid://dh3oj5p4jelc6" path="res://icon.svg" id="1_r60qr"]
-[ext_resource type="Script" path="res://Arena.cs" id="3_32bxo"]
-[ext_resource type="ArrayMesh" uid="uid://cqbtdpl1e8fv0" path="res://floor.obj" id="3_pacsq"]
-[ext_resource type="PackedScene" uid="uid://bbr0tgno7elfo" path="res://player.tscn" id="3_tcceg"]
+[ext_resource type="ArrayMesh" uid="uid://cw5xt0hqo38ex" path="res://Assets/monkey_smooth.obj" id="1_3vxd6"]
+[ext_resource type="Texture2D" uid="uid://dh3oj5p4jelc6" path="res://Assets/icon.svg" id="1_r60qr"]
+[ext_resource type="ArrayMesh" uid="uid://cqbtdpl1e8fv0" path="res://Assets/floor.obj" id="3_pacsq"]
+[ext_resource type="PackedScene" uid="uid://bbr0tgno7elfo" path="res://Scenes/player.tscn" id="3_tcceg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdohv"]
 albedo_color = Color(1, 0.14902, 1, 1)
@@ -118,7 +117,6 @@ curve = SubResource("Curve3D_fomfh")
 transform = Transform3D(0.591444, 0.535533, 0.602825, -5.96046e-08, 0.747601, -0.664148, -0.806346, 0.392806, 0.442164, -0.377591, -1.44398, 1.48091)
 
 [node name="Arena" type="Node3D" parent="."]
-script = ExtResource("3_32bxo")
 
 [node name="Tile0x" type="StaticBody3D" parent="Arena"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5789, 0, 0)

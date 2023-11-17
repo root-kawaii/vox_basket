@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://chf5tsjuf7c83"
-path="res://.godot/imported/chr_knight.vox.obj-0d06afb391f6aa3c13bed470e548cf61.mesh"
+path="res://.godot/imported/chr_knight.vox.obj-900ec5ef53b8f8ba35b2a5022e18df40.mesh"
 
 [deps]
 
-files=["res://.godot/imported/chr_knight.vox.obj-0d06afb391f6aa3c13bed470e548cf61.mesh"]
+files=["res://.godot/imported/chr_knight.vox.obj-900ec5ef53b8f8ba35b2a5022e18df40.mesh"]
 
-source_file="res://chr_knight.vox.obj"
-dest_files=["res://.godot/imported/chr_knight.vox.obj-0d06afb391f6aa3c13bed470e548cf61.mesh", "res://.godot/imported/chr_knight.vox.obj-0d06afb391f6aa3c13bed470e548cf61.mesh"]
+source_file="res://Assets/chr_knight.vox.obj"
+dest_files=["res://.godot/imported/chr_knight.vox.obj-900ec5ef53b8f8ba35b2a5022e18df40.mesh", "res://.godot/imported/chr_knight.vox.obj-900ec5ef53b8f8ba35b2a5022e18df40.mesh"]
 
 [params]
 

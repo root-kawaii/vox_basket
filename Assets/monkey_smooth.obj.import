@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cw5xt0hqo38ex"
-path="res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh"
+path="res://.godot/imported/monkey_smooth.obj-16168c793c25de1c1f529f9f16ad096e.mesh"
 
 [deps]
 
-files=["res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh"]
+files=["res://.godot/imported/monkey_smooth.obj-16168c793c25de1c1f529f9f16ad096e.mesh"]
 
-source_file="res://monkey_smooth.obj"
-dest_files=["res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh", "res://.godot/imported/monkey_smooth.obj-e390db889369d40f70dfa1a5e4fbe024.mesh"]
+source_file="res://Assets/monkey_smooth.obj"
+dest_files=["res://.godot/imported/monkey_smooth.obj-16168c793c25de1c1f529f9f16ad096e.mesh", "res://.godot/imported/monkey_smooth.obj-16168c793c25de1c1f529f9f16ad096e.mesh"]
 
 [params]
 

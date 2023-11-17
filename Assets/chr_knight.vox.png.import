@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtsobttss46ua"
-path.s3tc="res://.godot/imported/chr_knight.vox.png-168cb5e0588ee69b3c3e29b614aab49a.s3tc.ctex"
+path.s3tc="res://.godot/imported/chr_knight.vox.png-5e2dca75fec72b1012916fe90015415f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://chr_knight.vox.png"
-dest_files=["res://.godot/imported/chr_knight.vox.png-168cb5e0588ee69b3c3e29b614aab49a.s3tc.ctex"]
+source_file="res://Assets/chr_knight.vox.png"
+dest_files=["res://.godot/imported/chr_knight.vox.png-5e2dca75fec72b1012916fe90015415f.s3tc.ctex"]
 
 [params]
 

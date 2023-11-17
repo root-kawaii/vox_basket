@@ -26,7 +26,7 @@ public partial class Player : CharacterBody3D
 		{
 			squares.Add((Node3D)x);
 		}
-		var actionMenu = (Player)GetNode("../MenuBar/ActionMenu");
+		var actionMenu = GetNode("../MenuBar/ActionMenu");
 		var actions = actionMenu.GetChildren();
 		this.Position = squares[0].Position + new Godot.Vector3(0, 1, 0);
 		// _bar.MaxValue = actionMenu.
