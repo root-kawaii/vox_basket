@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccqs2dx827u0k"]
+
+[ext_resource type="Texture2D" uid="uid://dh3oj5p4jelc6" path="res://Assets/icon.svg" id="1_f7i57"]
+
+[node name="MenuBar" type="MenuBar"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.006
+offset_left = 6.0
+offset_top = -9.0
+offset_right = 1.0
+offset_bottom = 0.111973
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0616931
+anchor_top = 0.602383
+anchor_right = 0.894461
+anchor_bottom = 0.957805
+offset_left = 0.237996
+offset_top = -7.17501
+offset_right = 56.053
+offset_bottom = -0.109132
+theme_override_font_sizes/font_size = 100
+text = "CIAOOOOO
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.015
+anchor_right = 1.0
+anchor_bottom = 0.989
+offset_left = 71.0
+offset_top = 381.085
+offset_right = -66.0
+offset_bottom = -23.729
+theme_override_font_sizes/normal_font_size = 100
+text = "ciaooooooo"
+
+[node name="ActionMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = 370.729
+offset_right = -911.0
+offset_bottom = -10.0
+
+[node name="TextureButton" type="TextureButton" parent="ActionMenu"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_f7i57")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="ActionMenu"]
+layout_mode = 2
+texture_normal = ExtResource("1_f7i57")
+stretch_mode = 0

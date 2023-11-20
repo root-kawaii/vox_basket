@@ -1,9 +1,26 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbsymve3hmlig"]
 
 [ext_resource type="ArrayMesh" uid="uid://cw5xt0hqo38ex" path="res://Assets/monkey_smooth.obj" id="1_3vxd6"]
-[ext_resource type="Texture2D" uid="uid://dh3oj5p4jelc6" path="res://Assets/icon.svg" id="1_r60qr"]
 [ext_resource type="ArrayMesh" uid="uid://cqbtdpl1e8fv0" path="res://Assets/floor.obj" id="3_pacsq"]
 [ext_resource type="PackedScene" uid="uid://bbr0tgno7elfo" path="res://Scenes/player.tscn" id="3_tcceg"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_24cao"]
+script/source = "using Godot;
+using System;
+
+public partial class main : Node
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdohv"]
 albedo_color = Color(1, 0.14902, 1, 1)
@@ -19,69 +36,7 @@ point_count = 3
 size = Vector3(0.856795, 8.05415, 6.89506)
 
 [node name="Main" type="Node"]
-
-[node name="MenuBar" type="MenuBar" parent="."]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.006
-offset_left = 6.0
-offset_top = -9.0
-offset_right = 1.0
-offset_bottom = 0.111973
-metadata/_edit_use_anchors_ = true
-
-[node name="TextEdit" type="TextEdit" parent="MenuBar"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0616931
-anchor_top = 0.602383
-anchor_right = 0.894461
-anchor_bottom = 0.957805
-offset_left = 0.237996
-offset_top = -7.17501
-offset_right = 56.053
-offset_bottom = -0.109132
-theme_override_font_sizes/font_size = 100
-text = "CIAOOOOO
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MenuBar"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.015
-anchor_right = 1.0
-anchor_bottom = 0.989
-offset_left = 71.0
-offset_top = 381.085
-offset_right = -66.0
-offset_bottom = -23.729
-theme_override_font_sizes/normal_font_size = 100
-text = "ciaooooooo"
-
-[node name="ActionMenu" type="VBoxContainer" parent="MenuBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.011
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 54.0
-offset_top = 370.729
-offset_right = -911.0
-offset_bottom = -10.0
-
-[node name="TextureButton" type="TextureButton" parent="MenuBar/ActionMenu"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture_normal = ExtResource("1_r60qr")
-stretch_mode = 0
-
-[node name="TextureButton2" type="TextureButton" parent="MenuBar/ActionMenu"]
-layout_mode = 2
-texture_normal = ExtResource("1_r60qr")
-stretch_mode = 0
+script = SubResource("CSharpScript_24cao")
 
 [node name="MonkeySmooth" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.44419, 0.332987, 2.64994)
@@ -236,6 +191,3 @@ shape = SubResource("BoxShape3D_t3pcn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Tile11x"]
 mesh = ExtResource("3_pacsq")
-
-[connection signal="pressed" from="MenuBar/ActionMenu/TextureButton" to="CharacterBody3D" method="_on_texture_button_pressed"]
-[connection signal="pressed" from="MenuBar/ActionMenu/TextureButton2" to="CharacterBody3D" method="_on_texture_button_2_pressed"]
